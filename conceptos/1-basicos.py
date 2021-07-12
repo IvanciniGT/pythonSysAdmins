@@ -70,8 +70,91 @@ mi_variable_logica = True
 True and False  # False
 True or  False  # True
 not False       # True 
+# Operadores sobre textos
+"Hola" + """ """ + 'Amigo' # "Hola amigo"
+"HOLA" * 3                 # HOLAHOLAHOLA
 
 # Funciones básicas integradas en python
 print( "HOLA " )    # Imprimir un texto por consola
 edad = input("Dame tu edad: ")       # Lee algo de la consola
 print( edad )
+edad = 42
+print("Tu edad es: " + str(edad) ) 
+
+# Funciones de conversión de tipos de datos
+
+str(32)  # -> "32"
+int("32")
+float("32.23")
+bool("TRUE")
+
+# Programación imperativa
+
+## Expresiones de control de flujo
+
+### Condicionales
+# if CONDICION :
+# Dentro del if irá el codigo que debe ejecutarse si se cumple la condición
+# La condición tiene que ser un valor LOGICO
+edad=12
+if edad > 115:
+    print("Eres un superviviente !!!!!") # Al estar este código sangrado hacia la derecha (MAS QUE EL IF) 
+    print("Que guay !!!!, pero ya deberias conducir")
+elif edad > 18:
+    print("Eres mayor de edad") # Al estar este código sangrado hacia la derecha (MAS QUE EL IF) 
+    print("Que guay !!!!, ya puedes conducir")
+else:
+    print("Eres un pitufin")
+print("Adios!") # Este se ejecuta siempre
+
+
+### BUCLES
+
+#while CONDICION:
+    # CODIGO se ejecuta MIENTRAS se cumple la condición
+
+numero=10
+while numero > 0:
+    print(numero)
+    numero = numero - 1
+    numero -= 1 # -= += /= *=
+
+# Bucle que permite ejecutar un determinado codigo 
+#   PARA CADA UNO DE LOS VALORES QUE TENGA EN UNA COLECCION
+lista=("a","b","c")
+for valor in lista:
+    print("  >  "+ str(valor))
+    
+    
+# Quiero un bucle que itere sobre los numeros del 1 al 100    
+lista=range(1,100)
+for numero in lista:
+     print(numero)
+     
+    
+for numero in range(10,1,-2):
+     print(numero)
+
+
+
+# Programacion procedural
+
+## Definir una FUNCION o PROCEDIMIENTO
+def saluda (nombre="amigo", efusividad=False):
+    if not efusividad:
+        return "HOLA "+nombre
+    else:
+        return "HOLA "+nombre+" !!!!!!!!"
+    
+saluda("Ivan")
+saluda("Jero", True)
+saluda("Leo", True)
+saluda("Miguel", True)
+saluda()
+saluda(efusividad=True)
+saluda(efusividad=True, nombre="Cristian")
+
+saludo = saluda(efusividad=True, nombre="Gau")
+print(saludo)
+
+
