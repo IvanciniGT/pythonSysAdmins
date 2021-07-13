@@ -32,3 +32,53 @@ Que información necesito del servicio:
     - Para la monitorización
     
     
+---------------------------------------------------------------------------------------------------------
+
+Servicios
+    
+    Momento en el que la prueba debe realizarse / Que estoy probando conceptualmente
+        Si el sistema esta vivo o no
+        El que un sistema esté vivo... implica que sea utilizable?
+            BBDD <<<< Backup
+                Esta viva?                         SI
+                Esta todo correcto con ella?       SI
+                Es utilizable por los usuarios?    
+        
+        Arrancando un WEBLOGIC <<<< 5 minutos       ... Debo de marcar el WEBLOGIC como invalido?
+        
+        1º Saber si un servicio ha arrancado correctamente              <<< PRUEBAS
+                                                                Configuración de tiempos
+            StartupProbe
+                TCP
+                HTTP 
+        2º Saber si un servicio está en funcionamiento                  <<< PRUEBAS
+                                                                Configuración de tiempos
+            LifenessProbe
+                HTTP 
+                TCP
+        3º Saber si un servicio está listo para atender peticiones      <<< PRUEBAS
+                                                                Configuración de tiempos
+            ReadynessProbe
+                HTTP 
+                TCP
+        
+        Que sistema lleva este tipo de monitorización: Kubernetes / Openshift 
+        
+        Un servicio tiene 3 estados:
+            Started OK,KO
+            Live    OK,KO
+            Ready   OK,KO
+            
+            Started > Live <> Ready
+              ^^            V
+            UNKNOWN      > KO
+    
+    Pruebas
+        Distinto tipo (Naturaleza de la prueba: http, tcp, ping, ....)
+        Intervalo
+        Numero de fallos Consecutivos permitidos
+        Timeout
+    
+    
+
+
