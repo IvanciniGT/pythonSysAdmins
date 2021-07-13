@@ -1,7 +1,11 @@
+class Prueba:
+        
+    def __init__(self, nombre, timeout, intervalo, numero_fallos_permitidos_consecutivos ):
+        self.nombre=nombre
+        self.timeout=timeout
+        self.intervalo=intervalo
+        self.numero_fallos_permitidos_consecutivos=numero_fallos_permitidos_consecutivos
 
-Clase: Prueba
-    Nombre
-    Intervalo
-    Numero de fallos consecutivos admitidos
-    Timeout
-    <<< Codigo del programa que ejecuta la prueba en PYTHON
+    def ejecutar(self, servidor):
+        pass
+    
