@@ -24,7 +24,10 @@ class SistemaMonitorizacion:
     def baja_servicio(self, servicio):
         del self.servicios[servicio.nombre]
         #self.servicios.pop(servicio.nombre)
-        
+    
+    def status(self):
+        return self.__monitorizar
+
     def monitorizar(self):
         self.__monitorizar=True
         self.__hilo_de_control=Thread(target=self.crear_monitorizadores )

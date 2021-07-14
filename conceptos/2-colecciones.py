@@ -95,3 +95,6 @@ for clave in diccionario:
 for clave,valor in diccionario.items():
     print("++++"+clave)
     print(valor)
+
+print(diccionario)
+print(diccionario.items())
