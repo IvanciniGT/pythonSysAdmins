@@ -17,3 +17,23 @@ sistema_de_monitorizacion.monitorizar()
 # 5º Alta de un nuevo servicio
 # 6º Baja de un servicio
 
+# Esto se ejecuta en el hilo MAIN
+print("Monitorizando... ")
+while True:    
+    comando=input("> ") # Hace un sleep del hilo MAIN hasta que se pulsa ENTER en la consola
+
+    if comando == "quit":
+        print("Deteniendo el sistema de monitorización... y saliendo")
+        sistema_de_monitorizacion.parar_de_monitorizar()
+        break   
+    elif comando == "stop":
+        print("Deteniendo la monitorización...")
+        sistema_de_monitorizacion.parar_de_monitorizar()
+    elif comando == "start":
+        print("Iniciando la monitorización...")
+        sistema_de_monitorizacion.monitorizar()
+    else:
+        print("Comando no reconocido.")
+
+
+print("Sistema de monitorización detenido. Gracias por usar nuestro sistema de MonitorizacionACME.")

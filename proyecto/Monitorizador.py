@@ -42,13 +42,13 @@ class Monitorizador(Thread):
         # Mirar si debo ejecutar esta prueba ahora
         ejecutar=True
         ultima_ejecucion_de_la_prueba=self.__ultima_ejecucion.get(prueba.nombre)
-        print("Miro si necesito hacer la prueba "+ prueba.nombre)
+        #print("Miro si necesito hacer la prueba "+ prueba.nombre)
         # Si he hecho una ejecución
         if (not ultima_ejecucion_de_la_prueba is None) and time.time()-ultima_ejecucion_de_la_prueba < prueba.intervalo:    # Y ademas, no hace más del intervalo establecido para la prueba
                 ejecutar=False                                                  # No la ejecuto
         
         if ejecutar:
-            print("  Ejecutando prueba ")
+            #print("  Ejecutando prueba ")
             # Ejecutar la prueba
             resultado=prueba.ejecutar(self.servicio.servidor)
             # Anotar la ultima ejecucion
@@ -56,7 +56,7 @@ class Monitorizador(Thread):
             # Si no ha fallado => inicializar los fallos a 0
             
             if resultado:
-                print("  Prueba correcta ")
+                #print("  Prueba correcta ")
                 self.__numero_fallos_consecutivos[prueba.nombre]=0 # Me devuelve la hora del reloj del sistema
                 if self.servicio.estado == EstadoDeServicio.KO or self.servicio.estado == EstadoDeServicio.UNKNOWN:
                     self.servicio.estado = EstadoDeServicio.STARTED
@@ -69,9 +69,9 @@ class Monitorizador(Thread):
                 
             # Si ha fallado => anotar un fallo
             else:                                                                                                    # Valor por defecto si no existe 
-                print("  Prueba incorrecta ")
+                #print("  Prueba incorrecta ")
                 self.__numero_fallos_consecutivos[prueba.nombre]=self.__numero_fallos_consecutivos.get(prueba.nombre,0)+1
                 if self.__numero_fallos_consecutivos[prueba.nombre] >= prueba.numero_fallos_permitidos_consecutivos:
                     self.servicio.estado=EstadoDeServicio.KO
                 
-        print("    Estado del servicio: "+str(self.servicio.estado))
+        #print("    Estado del servicio: "+str(self.servicio.estado))
