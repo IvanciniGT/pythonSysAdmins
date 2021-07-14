@@ -2,15 +2,15 @@ from Monitorizador import Monitorizador
 from threading import Thread
 import time
 
-class SistemaMonitorizacion(Thread):
+class SistemaMonitorizacion:
     
     INTERVALO_COMPROBACION_SERVICIOS_A_MONITORIZAR = 2
     
     def __init__(self):
-        super().__init__()
         self.servicios={}    #< Estado de los servicios
         self.__monitorizadores={}    
         self.__monitorizar=True
+        self.__hilo_de_control=None
             
             
     def alta_servicio(self, servicio):
@@ -27,9 +27,10 @@ class SistemaMonitorizacion(Thread):
         
     def monitorizar(self):
         self.__monitorizar=True
-        self.start()
+        self.__hilo_de_control=Thread(target=self.crear_monitorizadores )
+        self.__hilo_de_control.start()
     
-    def run(self):
+    def crear_monitorizadores(self):
         # Crear Monitorizadores para cada Servicio con monitorizacion Activada
         # Meter un hilo que segun se activen / desactiven monitorizaciones sobre servicios, cree o borre Monitorizadores
         while self.__monitorizar:
@@ -61,3 +62,4 @@ class SistemaMonitorizacion(Thread):
         # Parar todas las monitorizaciones que se esten ejecutando
         Monitorizador.parar_todos_los_monitorizadores()
         self.__monitorizadores.clear()
+        self.__hilo_de_control=None
