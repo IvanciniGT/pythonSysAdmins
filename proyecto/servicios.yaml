@@ -1,0 +1,18 @@
+google:
+    startup:
+        - nombre:
+          tipo:
+          intervalo:
+          timeout:
+          intentos:
+        
+          puertos:
+            - 80
+            - 443
+          contexto: /
+          codigos_de_respuesta:
+            - 200
+    lifeness:
+    
+    ready:
+    
