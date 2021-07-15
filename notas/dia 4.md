@@ -36,3 +36,10 @@ print("Hola !!!")                               print "Escribo algo en la consol
 abs(-4)
 mifuncion(argumentos)
 
+-----
+{'servicio_de_google':
+    {'nombre': 'Google', 
+    'servidor': 'google.es', 
+    'pruebas_startup': 
+        [{'tipo': 'PruebaPing', 'nombre': 'Ping Startup', 'timeout': 5, 'intervalo': 5, 'numero_fallos_permitidos_consecutivos': 3}]
+    , 'pruebas_lifeness': [{'tipo': 'PruebaPing', 'nombre': 'Ping Lifeness', 'timeout': 5, 'intervalo': 5, 'numero_fallos_permitidos_consecutivos': 3}], 'pruebas_readyness': [{'tipo': 'PruebaPing', 'nombre': 'Ping Lifeness', 'timeout': 5, 'intervalo': 5, 'numero_fallos_permitidos_consecutivos': 3}], 'monitorizar': True}}

@@ -15,7 +15,7 @@ diccionario["Nombre"] ="Google"
 diccionario["Puertos"] = [80,443]
 print(diccionario)
 
-with open ("ejemplo_generado.yaml","w") as fichero_yaml:
+with open ("ejemplo.yaml","w") as fichero_yaml:
     yaml.dump(diccionario,fichero_yaml)
     
 ###################################################
@@ -31,3 +31,8 @@ with open ("ejemplo_generado.json","r") as fichero_json:
 with open ("ejemplo_generado.json","w") as fichero_json:
     json.dump(contenido_del_fichero,fichero_json)
     
+    
+###
+with open ("ejemplo_generado.yaml","r") as fichero_yaml:
+    contenido_del_fichero=yaml.load(fichero_yaml, Loader=yaml.FullLoader)
+    print(contenido_del_fichero)

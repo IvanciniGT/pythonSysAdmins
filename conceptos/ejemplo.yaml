@@ -1,11 +1,4 @@
-lista:
-- 1
-- 2.2
-- HOLA
-- false
-servicio:
-  nombre: Google
-  servidor: google.es
-  puertos:
-  - 80
-  - 443
+Nombre: Google
+Puertos:
+- 80
+- 443
