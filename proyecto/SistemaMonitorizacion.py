@@ -2,6 +2,10 @@ from Monitorizador import Monitorizador
 from threading import Thread
 import time
 import yaml
+##########
+from PruebaPing import PruebaPing
+from Servicio import Servicio
+from Servicio import EstadoDeServicio
 
 class SistemaMonitorizacion:
     
@@ -27,6 +31,7 @@ class SistemaMonitorizacion:
                 definicion_servicio["pruebas_"+tipo_prueba]=lista_de_pruebas
             
             servicio=Servicio()
+            definicion_servicio["estado"]=EstadoDeServicio.UNKNOWN
             servicio.__dict__=definicion_servicio
             
             self.alta_servicio(servicio)
