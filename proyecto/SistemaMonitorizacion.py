@@ -3,6 +3,7 @@ from threading import Thread
 import time
 import yaml
 ##########
+from PruebaService import PruebaService
 from PruebaPing import PruebaPing
 from Servicio import Servicio
 from Servicio import EstadoDeServicio

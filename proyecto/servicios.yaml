@@ -9,6 +9,15 @@
                 timeout: 5
                 intervalo: 5
                 numero_fallos_permitidos_consecutivos: 3
+                
+            -   tipo: PruebaService 
+                nombre: "Probar Servicios Base de datos"
+                timeout: 5
+                intervalo: 5
+                numero_fallos_permitidos_consecutivos: 3
+                servicios:
+                    - mysql
+                    - ssh
         lifeness: 
             -   <<: *pruebaPing
                 nombre: "Ping Lifeness"
