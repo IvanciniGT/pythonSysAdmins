@@ -9,7 +9,11 @@
                 timeout: 5
                 intervalo: 5
                 numero_fallos_permitidos_consecutivos: 3
-                
+            
+        lifeness: 
+            -   <<: *pruebaPing
+                nombre: "Ping Lifeness"
+        readyness:
             -   tipo: PruebaService 
                 nombre: "Probar Servicios Base de datos"
                 timeout: 5
@@ -18,13 +22,8 @@
                 servicios:
                     - mysql
                     - ssh
-                usuario: ubuntu
-        lifeness: 
-            -   <<: *pruebaPing
-                nombre: "Ping Lifeness"
-        readyness:
-            -   <<: *pruebaPing
-                nombre: "Ping Lifeness"
+                    - ruina
+                usuario: ubuntu    
 -   nombre:   "Google"
     servidor: "google.es"
     monitorizar: True
