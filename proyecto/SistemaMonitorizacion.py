@@ -5,6 +5,7 @@ import yaml
 ##########
 from PruebaService import PruebaService
 from PruebaPing import PruebaPing
+from PruebaSelenium import PruebaSelenium
 from Servicio import Servicio
 from Servicio import EstadoDeServicio
 
