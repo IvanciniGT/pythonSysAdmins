@@ -11,8 +11,12 @@
                 numero_fallos_permitidos_consecutivos: 3
             
         lifeness: 
-            -   <<: *pruebaPing
-                nombre: "Ping Lifeness"
+            -   tipo: PruebaSelenium
+                nombre: "Probar si el buscador de itnow funciona"
+                timeout: 5
+                intervalo: 5
+                numero_fallos_permitidos_consecutivos: 3
+                
         readyness:
             -   tipo: PruebaService 
                 nombre: "Probar Servicios Base de datos"
