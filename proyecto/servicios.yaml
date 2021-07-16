@@ -1,5 +1,5 @@
--   nombre:   "Google"
-    servidor: "google.es"
+-   nombre:   "Cloud9"
+    servidor: "localhost"
     monitorizar: True
     pruebas:
         startup: 
@@ -18,6 +18,19 @@
                 servicios:
                     - mysql
                     - ssh
+                usuario: ubuntu
+        lifeness: 
+            -   <<: *pruebaPing
+                nombre: "Ping Lifeness"
+        readyness:
+            -   <<: *pruebaPing
+                nombre: "Ping Lifeness"
+-   nombre:   "Google"
+    servidor: "google.es"
+    monitorizar: True
+    pruebas:
+        startup: 
+            -   <<: *pruebaPing
         lifeness: 
             -   <<: *pruebaPing
                 nombre: "Ping Lifeness"
